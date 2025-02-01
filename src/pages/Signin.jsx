@@ -2,6 +2,10 @@ import "../styles/Signin.css";
 
 function Signin() {
   return (
+    <main>
+      <div className="bgimg">
+        <img src="./mal_bg.jpg" alt="" />
+      </div>
     <div className="container">
       <div className="heading">Sign In</div>
       <form action className="form">
@@ -33,6 +37,7 @@ function Signin() {
         </span>
       </p>
     </div>
+    </main>
   );
 }
 

@@ -1,0 +1,26 @@
+.navbar{
+    height: 60px;
+    width: 96.2vw;
+    background-color: rgb(16, 137, 211);
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px 0 30px;
+    color: white;
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    gap: 15px;
+}
+.buttons button{
+    background: #ffffff;
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.buttons button:hover{
+    transform: scale(1.04);
+}

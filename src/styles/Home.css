@@ -1,0 +1,36 @@
+main{
+    margin-top: 60px;
+}
+
+main h1{
+    margin-left: 100px;
+}
+
+.cards{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    width: 90vw;
+}
+.home-container{
+    display: flex;
+    margin: auto;
+    gap:10px;
+    justify-content: center;
+    width: 90vw;
+    margin-top: 50px;
+}
+
+.home-card{
+    width: 40vw;
+    border: 1px solid gray;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.home-card h2{
+    padding-left: 10px;
+    border-bottom: 1px solid gray;
+}
+.home-card p{
+    padding: 10px;
+}
