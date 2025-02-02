@@ -10,38 +10,58 @@ function Home() {
             header="Domain"
             title="Machine Learning"
             imgPath="./machine.svg"
+            borderColor="#a10a0a"
           />
           <Card
             header="Dataset Sources"
             title="Kaggle, Ember"
             imgPath="./dataset.svg"
+            borderColor="#067815"
           />
           <Card
             header="Algorithm"
             title="RFC, LightGBM"
             imgPath="./algorithm.svg"
+            borderColor="#620185"
           />
-          <Card header="Framework" title="React.js" imgPath="./frame.svg" />
+          <Card 
+            header="Framework" 
+            title="React.js" 
+            imgPath="./frame.svg" 
+            borderColor="#012969" 
+          />
         </div>
         <div className="home-container">
           <div className="left">
             <div className="home-card">
-              <h2>Problem Statement</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, consectetur! Exercitationem fugit molestiae aspernatur dicta quia ratione perferendis vel incidunt qui doloribus? Sequi, eveniet? Est iure, veritatis eaque cum voluptatem quia odio nostrum, facere quasi libero quos voluptas incidunt earum impedit nulla illum. Sit repellendus maiores rerum, nulla cum voluptatem repellat porro sunt vel quod, ab ex? Sunt, veritatis maxime error vitae quasi, nulla, officiis repellat deserunt quisquam fugiat accusantium?</p>
+              <div className="head">
+                <h3>Problem Statement</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic explicabo similique ut! Magnam odio natus facilis, aliquid soluta amet debitis incidunt sed fugiat maiores iure sequi, corrupti distinctio dignissimos, esse tempora architecto nemo. Quisquam obcaecati deserunt architecto animi, maiores amet odio possimus cum rerum earum ipsam reprehenderit maxime aliquid illo itaque autem! Tempore, labore ipsam vero eos iste perspiciatis aliquid autem ad. Debitis dicta necessitatibus repellendus quidem, impedit cumque maiores?
+              </p>
             </div>
             <div className="home-card">
-              <h2>Introduction</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus atque similique qui placeat ut labore iste dignissimos harum consectetur ab quis, ipsam reprehenderit minima quaerat sunt odio fuga porro eveniet laborum commodi adipisci eum quos veniam sit. Explicabo molestiae vero, veritatis quia a deserunt dolorem totam rem recusandae ipsum quam debitis! Minus, dolorem! Esse aperiam aut, odio architecto delectus laborum voluptatum rerum, nobis cumque adipisci dolore, fugit rem nemo dolor.</p>
+            <div className="head">
+                <h3>Introduction</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, optio repudiandae. Quis maiores harum omnis est saepe modi adipisci aliquam dolore amet, suscipit, a iste id autem officia? Iste, in natus, doloremque sequi reprehenderit cumque animi est voluptas quaerat iusto voluptatem maiores aspernatur enim? Doloremque culpa dolorem dolor, eligendi impedit molestiae aut nostrum odio, nulla est voluptate praesentium repellendus similique quam vel asperiores delectus temporibus aspernatur reprehenderit suscipit cumque. Ex.
+              </p>
             </div>
           </div>
           <div className="right">
             <div className="home-card">
-              <h2>Proposed Solution</h2>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nihil aperiam aspernatur consequuntur, praesentium nam, dolores modi assumenda sapiente fugiat qui, unde neque perspiciatis at obcaecati facilis sit porro? In consequuntur cum, dolore repellat maxime, mollitia magnam laudantium dolorem voluptas nostrum ab officia? Explicabo recusandae alias incidunt? Maxime, cum minima! Reprehenderit labore dolores delectus cupiditate eveniet. Reprehenderit doloremque tenetur quidem illum. Esse quos tempora aperiam modi quaerat officia. Molestias, eaque.</p>
+            <div className="head">
+                <h3>Proposed Solution</h3>
+              </div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum veniam tempore corporis molestias quod illum. Magnam dicta quia blanditiis ipsam modi. Molestias, distinctio. Odit voluptates necessitatibus voluptas magni voluptatum debitis rem, aspernatur dolor facilis sunt molestiae ut beatae mollitia. Repellat ipsam tempora aliquam, error iste quisquam doloremque perferendis quas similique tempore voluptatem nesciunt sapiente laborum officiis quae voluptatum inventore commodi aliquid neque. Nulla optio tenetur quam aspernatur, placeat quae asperiores!
+              </p>
             </div>
             <div className="home-card">
-              <h2>Conclusion</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At error unde quaerat voluptatum! Illo, possimus. Tenetur accusantium rem quam cupiditate blanditiis quas eveniet porro recusandae culpa, iusto exercitationem fugiat ab asperiores pariatur iste! Minus laudantium, corrupti natus ipsa id ad nesciunt quasi commodi omnis soluta nulla, eos asperiores harum in, ut aliquam laboriosam hic vitae fugiat vel est. Dolorum nostrum odit atque eaque doloremque voluptates deserunt ea pariatur assumenda culpa.</p>
+            <div className="head">
+                <h3>Conclusion</h3>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, magnam voluptatem vero repudiandae qui voluptas fugit quisquam ipsa natus reiciendis excepturi alias nemo necessitatibus soluta! Doloribus voluptas pariatur corporis perspiciatis temporibus! Suscipit eligendi, odio iste nobis cum cumque voluptatem quas reiciendis animi doloribus necessitatibus similique exercitationem veniam autem harum quod dicta voluptate commodi sit voluptatum pariatur assumenda. Iste, eveniet ea quasi iure earum, inventore, cupiditate nulla et dolor reprehenderit aspernatur?
+              </p>
             </div>
           </div>
         </div>
