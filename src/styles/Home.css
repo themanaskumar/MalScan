@@ -1,4 +1,4 @@
-main{
+.main{
     margin-top: 60px;
 }
 
@@ -25,7 +25,7 @@ main h1{
     width: 40vw;
     border: 1px solid gray;
     margin-bottom: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     background-color: white;

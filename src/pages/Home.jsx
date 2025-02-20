@@ -1,8 +1,10 @@
 import "../styles/Home.css";
 import Card from "../components/Card";
+import Navbar from "../components/Navbar";
 function Home() {
   return (
-    <main>
+    <main className="main">
+      <Navbar />
       <div>
         <h1>Project Overview</h1>
         <div className="cards">

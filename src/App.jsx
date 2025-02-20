@@ -4,16 +4,16 @@ import "./App.css";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
-import Navbar from "./components/navbar";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );
