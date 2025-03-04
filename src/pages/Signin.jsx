@@ -1,6 +1,38 @@
 import "../styles/Signin.css";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
-function Signin() {
+const Signin = ({handleLogin}) => {
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+
+  const onSubmit = (data) => {
+    fetch('http://localhost:3000/signin', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+          handleLogin();
+          localStorage.setItem("userName", data.userName);
+          localStorage.setItem("userEmail", data.userEmail);
+          navigate('/home');
+        } else {
+          setErrorMessage("Invalid credentials");
+        }
+      })
+      .catch(error => {
+        console.error("Error during login:", error);
+        setErrorMessage("Server error");
+      });
+  };
   return (
     <main>
       <div className="bgimg">
@@ -16,6 +48,7 @@ function Signin() {
           name="email"
           id="email"
           placeholder="E-mail"
+          {...register("email", { required: "Email is required" })}
         />
         <input
           required
@@ -24,7 +57,11 @@ function Signin() {
           name="password"
           id="password"
           placeholder="Password"
+          {...register("password", { required: "Password is required" })}
         />
+        <div className="errorContainer">
+              {errorMessage && <p>{errorMessage}</p>}
+        </div>
         <span className="forgot-password">
           <a href="#">Forgot Password ?</a>
         </span>
