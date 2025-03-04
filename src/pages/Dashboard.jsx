@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
-import "../styles/Dashboard.css"
+import "../styles/Dashboard.css";
 
 const Dashboard = () => {
   return (
@@ -65,7 +65,20 @@ const Dashboard = () => {
                 <h3>Development Approach</h3>
               </div>
               <p>
-                The ML model development includes data acquisitiion from multiple trusted souurces. For example the dataset for URL prediction model were acquired from <a href="https://www.kaggle.com/datasets/samahsadiq/benign-and-malicious-urls">Kaggle</a> and the dataset for training the model for PE file prediction was taken from <a href="https://github.com/elastic/ember">Ember</a>. The next steps in developing the models were data preprocessing (making the data suitable for model training), feature extraction, choosing algorithms for building the model, model development, computation of performance metrices and then choosing the best model to use.
+                The ML model development includes data acquisitiion from
+                multiple trusted souurces. For example the dataset for URL
+                prediction model were acquired from{" "}
+                <a href="https://www.kaggle.com/datasets/samahsadiq/benign-and-malicious-urls">
+                  Kaggle
+                </a>{" "}
+                and the dataset for training the model for PE file prediction
+                was taken from{" "}
+                <a href="https://github.com/elastic/ember">Ember</a>. The next
+                steps in developing the models were data preprocessing (making
+                the data suitable for model training), feature extraction,
+                choosing algorithms for building the model, model development,
+                computation of performance metrices and then choosing the best
+                model to use.
               </p>
             </div>
             <div className="home-card">
@@ -73,7 +86,11 @@ const Dashboard = () => {
                 <h3>Model Development</h3>
               </div>
               <p>
-                Machine Learning (ML) Model Lifecycle refers to the process that covers right from source data identification to model development, model deployment and model maintainence. At high level, the entire ectivities fall under two broad ctegories which are ML Model Development and ML Model Operations. 
+                Machine Learning (ML) Model Lifecycle refers to the process that
+                covers right from source data identification to model
+                development, model deployment and model maintainence. At high
+                level, the entire ectivities fall under two broad ctegories
+                which are ML Model Development and ML Model Operations.
               </p>
             </div>
           </div>
