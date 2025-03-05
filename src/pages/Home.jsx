@@ -1,10 +1,10 @@
 import "../styles/Home.css";
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
-function Home() {
+function Home({isLoggedIn, setLogin}) {
   return (
     <main className="main">
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setLogin={setLogin} />
       <div>
         <h1>Project Overview</h1>
         <div className="cards">

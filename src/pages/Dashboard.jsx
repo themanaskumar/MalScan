@@ -3,10 +3,10 @@ import Card from "../components/Card";
 import Navbar from "../components/Navbar";
 import "../styles/Dashboard.css"
 
-const Dashboard = () => {
+const Dashboard = ({isLoggedIn, setLogin}) => {
   return (
     <main className="main">
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} setLogin={setLogin} />
       <div>
         <h1>Dashboard</h1>
         <div className="cards">
