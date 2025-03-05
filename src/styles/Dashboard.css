@@ -1,8 +1,8 @@
-.home-card img{
-    width: 600px;
-    margin-left: 10px;
+.home-card img {
+  width: 90%;
+  margin-left: 10px;
 }
-.home-card h4{
-    margin-left: 10px;
-    color: gray;
+.home-card h4 {
+  margin-left: 10px;
+  color: gray;
 }
