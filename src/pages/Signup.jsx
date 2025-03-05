@@ -1,66 +1,60 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import "../styles/Signin.css";
-
-const Signup = ({ handleLogin = () => {} }) => {
+const Signup = ({handleLogin = () =>{}}) =>{
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-  const onSubmit = async (data) => {
-    try {
-      const response = await fetch('http://127.0.0.1:8001/api/users/signup/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      const responseData = await response.json();
-
-      if (response.ok) {
-        if (responseData.tokens) {
-          localStorage.setItem("accessToken", responseData.tokens.access);
-          localStorage.setItem("refreshToken", responseData.tokens.refresh);
-          localStorage.setItem("name", responseData.name);
-          localStorage.setItem("email", responseData.email);
-
-          handleLogin(); // Call login handler
-          navigate('/'); // Redirect to home page
+  const onSubmit = (data) => {
+    fetch('http://127.0.0.1:8001/api/users/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          localStorage.setItem("accessToken", data.token.access);
+          localStorage.setItem("refreshToken", data.token.refresh);
+          localStorage.setItem("name", data.name);
+          localStorage.setItem("email", data.email);
+          handleLogin();
+          navigate('/');
         } else {
-          setErrorMessage("Signup successful, but no tokens received.");
+          setErrorMessage("Error during signup");
         }
-      } else {
-        setErrorMessage(responseData.message || "Signup failed.");
-      }
-    } catch (error) {
-      console.error("Error during signup:", error);
-      setErrorMessage("Server error. Please try again later.");
-    }
+      })
+      .catch(error => {
+        console.error("Error during signup:", error);
+        setErrorMessage("Server error");
+      });
   };
 
   return (
     <main>
       <div className="bgimg">
-        <img src="./mal_bg.jpg" alt="Background" />
+        <img src="./mal_bg.jpg" alt="" />
       </div>
       <div className="container">
         <div className="heading">Sign Up</div>
         <form onSubmit={handleSubmit(onSubmit)} className="form">
           <input
+            required
             className="input"
             type="text"
+            name="name"
             id="name"
             placeholder="Full name"
             {...register("name", { required: "Name is required" })}
           />
-          {errors.name && <p className="error">{errors.name.message}</p>}
-
           <input
+            required
             className="input"
             type="email"
+            name="email"
             id="email"
             placeholder="E-mail"
             {...register("email", {
@@ -71,11 +65,11 @@ const Signup = ({ handleLogin = () => {} }) => {
               },
             })}
           />
-          {errors.email && <p className="error">{errors.email.message}</p>}
-
           <input
+            required
             className="input"
             type="password"
+            name="password"
             id="password"
             placeholder="Password"
             {...register("password", {
@@ -86,27 +80,24 @@ const Signup = ({ handleLogin = () => {} }) => {
               },
             })}
           />
-          {errors.password && <p className="error">{errors.password.message}</p>}
-
           <div className="errorContainer">
-            {errorMessage && <p className="error">{errorMessage}</p>}
-          </div>
-
-          <input 
-            className="login-button" 
-            type="submit" 
-            value={isSubmitting ? "Signing Up..." : "Sign Up"} 
-            disabled={isSubmitting} 
-          />
+              {errors.email && <p>{errors.email.message}</p>}
+              {errors.password && <p>{errors.password.message}</p>}
+              {errorMessage && <p>{errorMessage}</p>}
+            </div>
+          <input className="login-button" type="button" value="Sign Up" />
         </form>
-
-        <p className="sign-up-label">
-          Already have an account?
-          <span><a href="/signin"> Sign In</a></span>
-        </p>
+        <div>
+          <p className="sign-up-label">
+            Already have an account?
+            <span>
+              <a href="/signin"> Sign In</a>
+            </span>
+          </p>
+        </div>
       </div>
     </main>
   );
-};
+}
 
 export default Signup;
