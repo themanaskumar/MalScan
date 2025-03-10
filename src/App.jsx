@@ -23,11 +23,11 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" isLoggedIn={isLoggedIn} setLogin={setLogin} element={isLoggedIn?<Home />:<Signin />} />
         <Route path="/signin" handleLogin={handleLogin} element={<Signin />} />
+        <Route path="/" isLoggedIn={isLoggedIn} setLogin={setLogin} element={<Home />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" isLoggedIn={isLoggedIn} setLogin={setLogin} element={isLoggedIn?<Dashboard />:<Signin />} />
-        <Route path = "/testurl" isLoggedIn={isLoggedIn} setLogin={setLogin} element={isLoggedIn?<PredictURL />:<Signin />} />
+        <Route path="/dashboard" isLoggedIn={isLoggedIn} setLogin={setLogin} element={<Dashboard />} />
+        <Route path = "/testurl" isLoggedIn={isLoggedIn} setLogin={setLogin} element={<PredictURL />} />
       </Routes>
     </div>
   );
