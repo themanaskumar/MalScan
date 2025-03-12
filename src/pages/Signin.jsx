@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-const Signin = ({ handleLogin = () => {} }) => {
+const Signin = ({handleLogin}) => {
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
@@ -15,21 +15,56 @@ function App() {
   };
   useEffect(() => {
     // Check if token exists to persist login
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("accessToken");
     if (token) {
       setLogin(true);
     }
-  });
+  }, []);
   return (
-    <div>
-      <Routes>
-        <Route path="/signin" handleLogin={handleLogin} element={<Signin />} />
-        <Route path="/" isLoggedIn={isLoggedIn} setLogin={setLogin} element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" isLoggedIn={isLoggedIn} setLogin={setLogin} element={<Dashboard />} />
-        <Route path = "/testurl" isLoggedIn={isLoggedIn} setLogin={setLogin} element={<PredictURL />} />
-      </Routes>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? (
+                <Home isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signin handleLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/signin"
+            element={<Signin handleLogin={handleLogin} />}
+          />
+          <Route
+            path="/signup"
+            element={<Signup handleLogin={handleLogin} />}
+          />
+          <Route
+            path="/dashboard"
+            element={
+              isLoggedIn ? (
+                <Dashboard isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signin handleLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/testurl"
+            element={
+              isLoggedIn ? (
+                <PredictURL isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signin handleLogin={handleLogin} />
+              )
+            }
+          />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
