@@ -63,7 +63,6 @@ const Signup = ({handleLogin}) => {
             placeholder="Full name"
             {...register("name", { required: "Name is required" })}
           />
-          {errors.name && <p className="error">{errors.name.message}</p>}
 
           <input
             className="input"
@@ -78,7 +77,6 @@ const Signup = ({handleLogin}) => {
               },
             })}
           />
-          {errors.email && <p className="error">{errors.email.message}</p>}
 
           <input
             className="input"
@@ -93,10 +91,12 @@ const Signup = ({handleLogin}) => {
               },
             })}
           />
-          {errors.password && <p className="error">{errors.password.message}</p>}
 
           <div className="errorContainer">
+            {errors.name && <p className="error">{errors.name.message}</p>}
             {errorMessage && <p className="error">{errorMessage}</p>}
+            {errors.password && <p className="error">{errors.password.message}</p>}
+            {errors.email && <p className="error">{errors.email.message}</p>}
           </div>
 
           <button className="login-button" type="submit" disabled={loading}>
@@ -106,7 +106,7 @@ const Signup = ({handleLogin}) => {
 
         <p className="sign-up-label">
           Already have an account?{" "}
-          <span><a href="/signin"> Sign In</a></span>
+          <span className='sign-up-link'><a href="/signin"> Sign In</a></span>
         </p>
       </div>
     </main>

@@ -54,7 +54,6 @@ const Signin = ({handleLogin}) => {
             placeholder="E-mail"
             {...register("email", { required: "Email is required" })}
           />
-          {errors.email && <p>{errors.email.message}</p>}
           
           <input
             className="input"
@@ -63,15 +62,16 @@ const Signin = ({handleLogin}) => {
             placeholder="Password"
             {...register("password", { required: "Password is required" })}
           />
-          {errors.password && <p>{errors.password.message}</p>}
           
           <div className="errorContainer">
             {errorMessage && <p>{errorMessage}</p>}
+            {errors.email && <p>{errors.email.message}</p>}
+            {errors.password && <p>{errors.password.message}</p>}
           </div>
 
-          <span className="forgot-password">
+          {/* <span className="forgot-password">
             <a href="#">Forgot Password?</a>
-          </span>
+          </span> */}
 
           <button className="login-button" type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Signing In..." : "Sign In"}

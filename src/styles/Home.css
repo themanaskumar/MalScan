@@ -3,7 +3,8 @@
 }
 
 main h1{
-    margin-left: 100px;
+    margin-left: 60px;
+    color: #00FF00;
 }
 
 .cards{
@@ -23,23 +24,23 @@ main h1{
 
 .home-card{
     width: 40vw;
-    border: 1px solid gray;
+    /* border: 1px solid rgb(255, 255, 255); */
     margin-bottom: 10px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: white;
+    background-color: #1A1A1D;
 }
 .home-card p{
     padding: 0 10px 10px 10px;
+    color: 	#E6E6E6;
 }
 .home-card .head{
     padding: 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #0088FF;
     padding-left: 20px;
-    background-color: rgb(16, 137, 211);
     display: flex;
     height: 40px;
     align-items: center;
-    color: white;
+    color: #0088FF;
 }

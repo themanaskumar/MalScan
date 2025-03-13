@@ -36,11 +36,23 @@ function App() {
           />
           <Route
             path="/signin"
-            element={<Signin handleLogin={handleLogin} />}
+            element={
+              isLoggedIn ? (
+                <Home isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signin handleLogin={handleLogin} />
+              )
+            }
           />
           <Route
             path="/signup"
-            element={<Signup handleLogin={handleLogin} />}
+            element={
+              isLoggedIn ? (
+                <Home isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signup handleLogin={handleLogin} />
+              )
+            }
           />
           <Route
             path="/dashboard"

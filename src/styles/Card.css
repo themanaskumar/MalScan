@@ -2,12 +2,11 @@
     height: 95px;
     border-radius: 10px;
     padding: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: #1A1A1D;
     width: 200px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: #E6E6E6;
 }
 .card span{
-    color: rgb(16, 137, 211);
     font-size: 12px;
 }
 .card-inter{

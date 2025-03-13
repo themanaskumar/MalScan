@@ -12,25 +12,25 @@ function Home({ isLoggedIn, setLogin }) {
             header="Domain"
             title="Machine Learning"
             imgPath="./machine.svg"
-            borderColor="#a10a0a"
+            borderColor="#FF3131"
           />
           <Card
             header="Dataset Sources"
             title="Kaggle, Ember"
             imgPath="./dataset.svg"
-            borderColor="#067815"
+            borderColor="#00FF00"
           />
           <Card
             header="Algorithm"
             title="RFC, LightGBM"
             imgPath="./algorithm.svg"
-            borderColor="#620185"
+            borderColor="#8A2BE2"
           />
           <Card
             header="Framework"
             title="React.js"
             imgPath="./frame.svg"
-            borderColor="#012969"
+            borderColor="#0088FF"
           />
         </div>
         <div className="home-container">

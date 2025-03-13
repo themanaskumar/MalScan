@@ -9,19 +9,22 @@
 .url-input {
   display: flex;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 20px;
+  background: #1A1A1D;
+  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0px 8px #00FF00;
 }
 
 .result {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.2);
   padding: 20px;
   border-radius: 10px;
+  background-color: #1A1A1D;
+  box-shadow: 0 0px 8px #00FF00;
+  margin-top: 25px;
+  color: #E6E6E6;
 }
 
 .url-input input {
@@ -32,17 +35,15 @@
   border-radius: 5px;
   font-size: 1rem;
   transition: all 0.3s ease;
-}
-
-.url-input input:focus {
-  background: rgba(255, 255, 255, 0.9);
+  background-color: #0D1117;
+  color: #E6E6E6;
 }
 
 .url-input button {
   padding: 10px 20px;
   border: none;
-  background: #ff5f6d;
-  color: #fff;
+  background: #00FF00;
+  color: #0D1117;
   font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -50,10 +51,28 @@
 }
 
 .url-input button:hover {
-  background: rgb(16, 137, 211);
-  transform: scale(1.1);
+  background-color: #0D1117; /* Turns black */
+  color: #00FF00; /* Neon Green text */
+  box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00; /* Neon glow */
+  animation: glow-animation 1.5s infinite alternate ease-in-out;
 }
 
 .url-input button:active {
   transform: scale(0.95);
+}
+
+.error-message{
+  color: #ff0000;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1A1A1D;
+  box-shadow: 0 0px 8px rgb(255, 66, 66);
+  margin-top: 50px;
+  padding-left: 85px;
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }

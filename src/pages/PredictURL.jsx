@@ -67,7 +67,7 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
             <h2>URL Analysis</h2>
             <p><strong>URL:</strong> {result.url}</p>
             <p><strong>Prediction:</strong> {result.prediction}</p>
-            <h3>Extracted Features:</h3>
+            <h3>URL Features:</h3>
             <ul>
               {Object.entries(result.features).map(([key, value]) => (
                 <li key={key}>

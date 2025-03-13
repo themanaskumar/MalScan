@@ -14,25 +14,25 @@ const Dashboard = ({isLoggedIn, setLogin}) => {
             header="Dataset Size"
             title="10+ GBs"
             imgPath="./data_size.svg"
-            borderColor="#a10a0a"
+            borderColor="#FF3131"
           />
           <Card
             header="Training Size"
             title="80%"
             imgPath="./size.svg"
-            borderColor="#067815"
+            borderColor="#00FF00"
           />
           <Card
             header="Test Size"
             title="20%"
             imgPath="./size.svg"
-            borderColor="#620185"
+            borderColor="#8A2BE2"
           />
           <Card
             header="Accuracy"
             title="99%"
             imgPath="./accuracy.svg"
-            borderColor="#012969"
+            borderColor="#0088FF"
           />
         </div>
         <div className="home-container">
