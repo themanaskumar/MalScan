@@ -1,46 +1,113 @@
-.main{
+.main {
     margin-top: 60px;
 }
 
-main h1{
+main h1 {
     margin-left: 60px;
     color: #00FF00;
 }
 
-.cards{
+.cards {
     display: flex;
     margin: auto;
     justify-content: space-around;
     width: 90vw;
 }
-.home-container{
+
+.home-container {
     display: flex;
     margin: auto;
-    gap:10px;
+    gap: 10px;
     justify-content: center;
     width: 90vw;
     margin-top: 50px;
 }
 
-.home-card{
+.home-card {
     width: 40vw;
-    /* border: 1px solid rgb(255, 255, 255); */
     margin-bottom: 10px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     background-color: #1A1A1D;
 }
-.home-card p{
-    padding: 0 10px 10px 10px;
-    color: 	#E6E6E6;
+
+p {
+    padding: 0 15px;
+    color: #E6E6E6;
 }
-.home-card .head{
+
+.head {
     padding: 0;
     border-bottom: 1px solid #0088FF;
     padding-left: 20px;
     display: flex;
     height: 40px;
     align-items: center;
+    color: #0088FF;
+}
+
+/* Meet The Creators Section */
+.creators {
+    max-width: 80.5vw;
+    margin: auto;
+    background-color: #1A1A1D;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.creator .head h3 {
+    color: #0088FF;
+}
+
+.creators-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+.creator {
+    text-align: center;
+}
+
+.creator img {
+    width: 130px;
+    border: 3px solid #E6E6E6;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Contact Section */
+.contact {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact h3 {
+    color: #0088FF;
+    margin-bottom: 15px;
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #E6E6E6;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
     color: #0088FF;
 }
