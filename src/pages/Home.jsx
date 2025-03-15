@@ -105,16 +105,16 @@ function Home({ isLoggedIn, setLogin }) {
               <p>Priyanshu Praneet</p>
             </div>
             <div className="creator">
+              <img src="./sreenand.jpg" alt="Sreenand S." />
+              <p>Sreenand S.</p>
+            </div>
+            <div className="creator">
               <img src="./muskan.png" alt="Muskan Kumari" />
               <p>Muskan Kumari</p>
             </div>
             <div className="creator">
               <img src="./aryan.png" alt="Aryan Gupta" />
               <p>Aryan Gupta</p>
-            </div>
-            <div className="creator">
-              <img src="./malscan_logo.jpg" alt="Sreenand S." />
-              <p>Sreenand S.</p>
             </div>
           </div>
         </div>

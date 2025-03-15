@@ -80,6 +80,10 @@ p {
     border-radius: 50%;
     object-fit: cover;
 }
+.creator img:hover {
+    cursor: pointer;
+    animation: glow-animation 1.5s infinite alternate ease-in-out;
+}
 
 /* Contact Section */
 .contact {
