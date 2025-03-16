@@ -30,6 +30,7 @@ const Signin = ({handleLogin}) => {
         
         handleLogin(); // Call the login handler
         navigate("/"); // Redirect to home page
+        alert("Signin successful!");
       } else {
         setErrorMessage(responseData.message || "Invalid credentials");
       }

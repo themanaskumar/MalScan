@@ -31,6 +31,7 @@ const Signup = ({handleLogin}) => {
           localStorage.setItem("refreshToken", responseData.tokens.refresh);
           localStorage.setItem("name", responseData.name);
           localStorage.setItem("email", responseData.email);
+          alert("Signup successful!");
 
           handleLogin(); // Update login state
           navigate('/'); // Redirect to home
