@@ -1,0 +1,138 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  color: #E6E6E6;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.file-input {
+  display: flex;
+  gap: 10px;
+  background: #1A1A1D;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0px 8px #00FF00;
+}
+
+.file-upload {
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #0D1117;
+  color: #E6E6E6;
+  cursor: pointer;
+}
+
+.file-upload::-webkit-file-upload-button {
+  background: #00FF00;
+  color: #0D1117;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload::-webkit-file-upload-button:hover {
+  background-color: #0D1117;
+  color: #00FF00;
+  box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00;
+}
+
+.file-input button {
+  padding: 10px 20px;
+  border: none;
+  background: #00FF00;
+  color: #0D1117;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.file-input button:hover {
+  background-color: #0D1117;
+  color: #00FF00;
+  box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00;
+  animation: glow-animation 1.5s infinite alternate ease-in-out;
+}
+
+.file-input button:active {
+  transform: scale(0.95);
+}
+
+.file-input button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1A1A1D;
+  box-shadow: 0 0px 8px #00FF00;
+  margin-top: 25px;
+  color: #E6E6E6;
+}
+
+.result h2 {
+  color: #00FF00;
+  margin-bottom: 15px;
+}
+
+.result h3 {
+  color: #00FF00;
+  margin: 15px 0 10px 0;
+}
+
+.result ul {
+  list-style: none;
+  padding: 0;
+}
+
+.result li {
+  margin: 8px 0;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #0D1117;
+}
+
+.error-message {
+  color: #ff0000;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #1A1A1D;
+  box-shadow: 0 0px 8px rgb(255, 66, 66);
+  margin-top: 50px;
+  padding-left: 85px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes glow-animation {
+  from {
+    box-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00;
+  }
+  to {
+    box-shadow: 0 0 15px #00FF00, 0 0 30px #00FF00;
+  }
+} 

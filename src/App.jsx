@@ -6,6 +6,8 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import PredictURL from "./pages/PredictURL";
+import TestPE from "./pages/TestPE";
+import History from "./pages/History";
 
 function App() {
   const [isLoggedIn, setLogin] = useState(false);
@@ -69,6 +71,26 @@ function App() {
             element={
               isLoggedIn ? (
                 <PredictURL isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signin handleLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/testpe"
+            element={
+              isLoggedIn ? (
+                <TestPE isLoggedIn={isLoggedIn} setLogin={setLogin} />
+              ) : (
+                <Signin handleLogin={handleLogin} />
+              )
+            }
+          />
+          <Route
+            path="/history"
+            element={
+              isLoggedIn ? (
+                <History isLoggedIn={isLoggedIn} setLogin={setLogin} />
               ) : (
                 <Signin handleLogin={handleLogin} />
               )

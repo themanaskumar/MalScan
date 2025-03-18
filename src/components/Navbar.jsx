@@ -36,8 +36,12 @@ const Navbar = ({ isLoggedIn, setLogin = () => {} }) => {
           <Link to="/testurl">
             <button>Test URL</button>
           </Link>
-          <button>Test PE</button>
-          <button>History</button>
+          <Link to="/testpe">
+            <button>Test PE</button>
+          </Link>
+          <Link to="/history">
+            <button>History</button>
+          </Link>
           <button onClick={() => setShowModal(true)}>Logout</button>
         </div>
       </div>
