@@ -14,6 +14,13 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
       return;
     }
 
+    // Regular expression to validate URLs
+    const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/;
+    if (!urlPattern.test(url)) {
+      setError("Please enter a valid URL.");
+      return;
+    }
+
     setLoading(true);
     setResult(null);
     setError("");
