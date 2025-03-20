@@ -53,40 +53,46 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
   return (
     <main className="main">
       <Navbar isLoggedIn={isLoggedIn} setLogin={setLogin} />
-      <div>
-        <h1 className="header">Test a URL</h1>
-        <div className="url-input">
-          <input
-            type="text"
-            placeholder="Enter URL here"
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
-          />
-          <button onClick={handleClick} disabled={loading}>
-            {loading ? "Testing..." : "Test"}
-          </button>
-        </div>
 
-        {error && <p className="error-message">{error}</p>}
-
-        {result && (
-          <div className="result">
-            <h2>URL Analysis</h2>
-            <p><strong>URL:</strong> {result.url}</p>
-            <p><strong>Prediction:</strong> {result.prediction}</p>
-            <h3>URL Features:</h3>
-            <ul>
-              {Object.entries(result.features).map(([key, value]) => (
-                <li key={key}>
-                  <strong>{key.replace(/_/g, " ")}:</strong> {value}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      <h1 className="header">Test a URL</h1>
+      <div className="url-input">
+        <input
+          type="text"
+          placeholder="Enter URL here"
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+        />
+        <button onClick={handleClick} disabled={loading}>
+          {loading ? "Testing..." : "Test"}
+        </button>
       </div>
+
+      {error && <p className="error-message">{error}</p>}
+
+      {/* Show Loading Spinner While Fetching */}
+      {loading && <div className="loading-spinner"></div>}
+
+      {!loading && result && (
+        <div className="result">
+          <h2>🔍 URL Analysis</h2>
+          <p><strong>🌐 URL:</strong> {result.url}</p>
+
+          {/* Styled Prediction */}
+          <p className="prediction">📊 {result.prediction}</p>
+
+          <h3>📌 URL Features:</h3>
+          <ul>
+            {Object.entries(result.features).map(([key, value]) => (
+              <li key={key}>
+                <span>⚡ {key.replace(/_/g, " ")}:</span> <strong>{value}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </main>
   );
 };
 
 export default PredictURL;
+
