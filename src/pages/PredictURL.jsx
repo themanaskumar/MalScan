@@ -78,7 +78,9 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
           <p><strong>🌐 URL:</strong> {result.url}</p>
 
           {/* Styled Prediction */}
-          <p className="prediction">📊 {result.prediction}</p>
+          <p className={`prediction ${result.prediction.toLowerCase()}`}>
+  📊 {result.prediction}
+</p>
 
           <h3>📌 URL Features:</h3>
           <ul>

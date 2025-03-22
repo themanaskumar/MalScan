@@ -12,7 +12,7 @@
   background: #1A1A1D;
   padding: 15px;
   border-radius: 10px;
-  width: 36vw; /* Adjust this if necessary */
+  width: 37.5vw; /* Adjust this if necessary */
   box-shadow: 0 0px 8px #00FF00;
 }
 
@@ -79,18 +79,38 @@
 .prediction {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #00FF00;
-  background: rgba(0, 255, 0, 0.15);
   padding: 12px;
   border-radius: 8px;
-  box-shadow: 0 0px 15px #00FF00;
   text-transform: uppercase;
-  animation: glow 1.5s infinite alternate ease-in-out;
+  animation: glow-green 1.5s infinite alternate ease-in-out;
 }
 
-@keyframes glow {
+/* Safe Prediction (Green) */
+.prediction.safe {
+  color: #00FF00;
+  background: rgba(0, 255, 0, 0.15);
+  box-shadow: 0 0px 15px #00FF00;
+  animation: glow-green 1.5s infinite alternate ease-in-out;
+}
+
+/* Malicious Prediction (Red) */
+.prediction.malicious {
+  color: #FF0000;
+  background: rgba(255, 0, 0, 0.15);
+  box-shadow: 0 0px 15px #FF0000;
+  animation: glow-red 1.5s infinite alternate ease-in-out;
+}
+
+/* Green Glow Animation */
+@keyframes glow-green {
   0% { box-shadow: 0 0 10px #00FF00; }
   100% { box-shadow: 0 0 20px #00FF00, 0 0 30px #00FF00; }
+}
+
+/* Red Glow Animation */
+@keyframes glow-red {
+  0% { box-shadow: 0 0 10px #FF0000; }
+  100% { box-shadow: 0 0 20px #FF0000, 0 0 30px #FF0000; }
 }
 
 /* Loading Spinner */
