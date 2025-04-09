@@ -30,7 +30,7 @@ const TestPE = ({ isLoggedIn, setLogin }) => {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://127.0.0.1:8001/pe_detection/predict/", {
+      const response = await fetch("http://127.0.0.1:8001/api/pe/predict/", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("accessToken")}`,
@@ -75,16 +75,23 @@ const TestPE = ({ isLoggedIn, setLogin }) => {
         {result && (
           <div className="result">
             <h2>PE File Analysis</h2>
-            <p><strong>File Name:</strong> {result.filename}</p>
+            {file && <p><strong>File Name:</strong> {file.name}</p>}
             <p><strong>Prediction:</strong> {result.prediction}</p>
-            <h3>File Features:</h3>
-            <ul>
-              {Object.entries(result.features).map(([key, value]) => (
-                <li key={key}>
-                  <strong>{key.replace(/_/g, " ")}:</strong> {value}
-                </li>
-              ))}
-            </ul>
+            <p><strong>Confidence Score:</strong> {result.score?.toFixed(4)}</p>
+
+            {/* 🚫 Removed this block to avoid Object.entries crash */}
+            {/* {result.features && (
+              <>
+                <h3>File Features:</h3>
+                <ul>
+                  {Object.entries(result.features).map(([key, value]) => (
+                    <li key={key}>
+                      <strong>{key.replace(/_/g, " ")}:</strong> {value}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )} */}
           </div>
         )}
       </div>
@@ -92,4 +99,4 @@ const TestPE = ({ isLoggedIn, setLogin }) => {
   );
 };
 
-export default TestPE; 
+export default TestPE;
