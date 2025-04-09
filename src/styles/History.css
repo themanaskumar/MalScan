@@ -9,6 +9,7 @@
 .header {
   color: #E6E6E6;
   margin-bottom: 30px;
+  margin-right: 30px;
   text-align: center;
 }
 
@@ -38,6 +39,20 @@
   box-shadow: 0 5px 15px #00FF00;
 }
 
+.loading-spinner {
+  margin:auto;
+  border: 6px solid rgba(0, 255, 0, 0.3);
+  border-top: 6px solid #00FF00;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.spacer{
+  margin-top: 80px;
+}
+
 .history-header {
   background: #0D1117;
   padding: 15px 20px;
@@ -59,6 +74,8 @@
 
 .history-content {
   padding: 20px;
+  display:flex;
+  justify-content: space-between;
   color: #E6E6E6;
 }
 
@@ -131,3 +148,98 @@
   50% { opacity: 0; }
   100% { opacity: 1; }
 } 
+
+* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #0d1117;
+  color: #e6e6e6;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 0 15px #00ff00;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  color: #00ff00;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #ff4444;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.features {
+  margin-top: 20px;
+}
+
+.features ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.features li {
+  background-color: #1f1f1f;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #ddd;
+  font-size: 0.95rem;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.2);
+}
+
+.history-actions {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.clear-button,
+.delete-button {
+  padding: 6px 12px;
+  background-color: #b4000f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-button:hover,
+.delete-button:hover {
+  background-color: #b90000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

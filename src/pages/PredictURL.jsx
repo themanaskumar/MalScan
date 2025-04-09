@@ -14,7 +14,6 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
       return;
     }
 
-    // Regular expression to validate URLs
     const urlPattern = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/\S*)?$/;
     if (!urlPattern.test(url)) {
       setError("Please enter a valid URL.");
@@ -30,7 +29,7 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("accessToken")}`, // Use token if needed
+          "Authorization": `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: JSON.stringify({ url }),
       });
@@ -39,6 +38,22 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
 
       if (response.ok) {
         setResult(responseData);
+
+
+        await fetch("http://127.0.0.1:8001/url_detection/history/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+          body: JSON.stringify({
+            url: responseData.url,
+            prediction: responseData.prediction,
+            features: responseData.features,
+            timestamp: new Date().toISOString() // optional if backend sets it
+          }),
+        });
+
       } else {
         setError(responseData.message || "Error detecting URL.");
       }
@@ -70,7 +85,11 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
       {error && <p className="error-message">{error}</p>}
 
       {/* Show Loading Spinner While Fetching */}
-      {loading && <div className="loading-spinner"></div>}
+      {loading && 
+      <div className="spacer">
+        <div className="loading-spinner"></div>
+      </div>
+      }
 
       {!loading && result && (
         <div className="result">
@@ -79,8 +98,8 @@ const PredictURL = ({ isLoggedIn, setLogin }) => {
 
           {/* Styled Prediction */}
           <p className={`prediction ${result.prediction.toLowerCase()}`}>
-  📊 {result.prediction}
-</p>
+            📊 {result.prediction}
+          </p>
 
           <h3>📌 URL Features:</h3>
           <ul>
