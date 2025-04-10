@@ -78,20 +78,6 @@ const TestPE = ({ isLoggedIn, setLogin }) => {
             {file && <p><strong>File Name:</strong> {file.name}</p>}
             <p><strong>Prediction:</strong> {result.prediction}</p>
             <p><strong>Confidence Score:</strong> {result.score?.toFixed(4)}</p>
-
-            {/* 🚫 Removed this block to avoid Object.entries crash */}
-            {/* {result.features && (
-              <>
-                <h3>File Features:</h3>
-                <ul>
-                  {Object.entries(result.features).map(([key, value]) => (
-                    <li key={key}>
-                      <strong>{key.replace(/_/g, " ")}:</strong> {value}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )} */}
           </div>
         )}
       </div>
